@@ -1,0 +1,929 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		56A6253C5D931D09398DBCFA /* Pods_DemoTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B3B95F3EC9C16C01F823FE /* Pods_DemoTimer.framework */; };
+		7480888B2A5D1058005E1C92 /* EnableModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748088892A5D1058005E1C92 /* EnableModeCell.swift */; };
+		7484E7672A5D1A0900D7833D /* EnableModeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7480888A2A5D1058005E1C92 /* EnableModeCell.xib */; };
+		7484E7682A5D1A0900D7833D /* ConfigureTimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C6B6BF2A5B82C900045ED2 /* ConfigureTimerView.xib */; };
+		7484E7692A5D1A0900D7833D /* HomeTimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C6B6AC2A591B8F00045ED2 /* HomeTimerView.xib */; };
+		7484E76B2A5D1A1800D7833D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74C6B67E2A591A4600045ED2 /* LaunchScreen.storyboard */; };
+		7490180E2A6761B400969572 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7490180D2A6761B400969572 /* Assets.xcassets */; };
+		749018122A67668D00969572 /* alert_high-intensity.wav in Resources */ = {isa = PBXBuildFile; fileRef = 749018102A67668D00969572 /* alert_high-intensity.wav */; };
+		749018132A67668D00969572 /* ringtone_minimal.wav in Resources */ = {isa = PBXBuildFile; fileRef = 749018112A67668D00969572 /* ringtone_minimal.wav */; };
+		749018152A6766B400969572 /* alarm_gentle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 749018142A6766B400969572 /* alarm_gentle.wav */; };
+		74C6B6742A591A4500045ED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6732A591A4500045ED2 /* AppDelegate.swift */; };
+		74C6B68B2A591A4600045ED2 /* DemoTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B68A2A591A4600045ED2 /* DemoTimerTests.swift */; };
+		74C6B6952A591A4600045ED2 /* DemoTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6942A591A4600045ED2 /* DemoTimerUITests.swift */; };
+		74C6B6972A591A4600045ED2 /* DemoTimerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6962A591A4600045ED2 /* DemoTimerUITestsLaunchTests.swift */; };
+		74C6B6AD2A591B8F00045ED2 /* HomeTimerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6A62A591B8F00045ED2 /* HomeTimerPresenter.swift */; };
+		74C6B6AF2A591B8F00045ED2 /* HomeTimerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6A82A591B8F00045ED2 /* HomeTimerRouter.swift */; };
+		74C6B6B02A591B8F00045ED2 /* HomeTimerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6A92A591B8F00045ED2 /* HomeTimerModels.swift */; };
+		74C6B6B12A591B8F00045ED2 /* HomeTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6AA2A591B8F00045ED2 /* HomeTimerViewController.swift */; };
+		74C6B6B22A591B8F00045ED2 /* HomeTimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6AB2A591B8F00045ED2 /* HomeTimerInteractor.swift */; };
+		74C6B6B62A5A203C00045ED2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6B52A5A203C00045ED2 /* Extensions.swift */; };
+		74C6B6B82A5AA21D00045ED2 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6B72A5AA21D00045ED2 /* Style.swift */; };
+		74C6B6C02A5B82C900045ED2 /* ConfigureTimerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6B92A5B82C900045ED2 /* ConfigureTimerPresenter.swift */; };
+		74C6B6C12A5B82C900045ED2 /* ConfigureTimerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6BA2A5B82C900045ED2 /* ConfigureTimerWorker.swift */; };
+		74C6B6C22A5B82C900045ED2 /* ConfigureTimerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6BB2A5B82C900045ED2 /* ConfigureTimerRouter.swift */; };
+		74C6B6C32A5B82C900045ED2 /* ConfigureTimerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6BC2A5B82C900045ED2 /* ConfigureTimerModels.swift */; };
+		74C6B6C42A5B82C900045ED2 /* ConfigureTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6BD2A5B82C900045ED2 /* ConfigureTimerViewController.swift */; };
+		74C6B6C52A5B82C900045ED2 /* ConfigureTimerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6BE2A5B82C900045ED2 /* ConfigureTimerInteractor.swift */; };
+		74C6B6CB2A5B8C6700045ED2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6CA2A5B8C6700045ED2 /* Constants.swift */; };
+		74FB0CFF2A5DBA7E0022ABD5 /* SoundAndVibrationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74FB0CFD2A5DBA7E0022ABD5 /* SoundAndVibrationCell.xib */; };
+		74FB0D002A5DBA7E0022ABD5 /* SoundAndVibrationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0CFE2A5DBA7E0022ABD5 /* SoundAndVibrationCell.swift */; };
+		74FB0D092A5E5C8A0022ABD5 /* CommetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D022A5E5C8A0022ABD5 /* CommetsPresenter.swift */; };
+		74FB0D0A2A5E5C8A0022ABD5 /* CommentsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D032A5E5C8A0022ABD5 /* CommentsWorker.swift */; };
+		74FB0D0B2A5E5C8A0022ABD5 /* CommentsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D042A5E5C8A0022ABD5 /* CommentsRouter.swift */; };
+		74FB0D0C2A5E5C8A0022ABD5 /* CommentsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D052A5E5C8A0022ABD5 /* CommentsModels.swift */; };
+		74FB0D0D2A5E5C8A0022ABD5 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D062A5E5C8A0022ABD5 /* CommentsViewController.swift */; };
+		74FB0D0E2A5E5C8A0022ABD5 /* CommentsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D072A5E5C8A0022ABD5 /* CommentsInteractor.swift */; };
+		74FB0D0F2A5E5C8A0022ABD5 /* CommentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74FB0D082A5E5C8A0022ABD5 /* CommentsView.xib */; };
+		74FB0D182A5F169E0022ABD5 /* ActionListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D112A5F169E0022ABD5 /* ActionListPresenter.swift */; };
+		74FB0D192A5F169E0022ABD5 /* ActionListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D122A5F169E0022ABD5 /* ActionListWorker.swift */; };
+		74FB0D1A2A5F169E0022ABD5 /* ActionListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D132A5F169E0022ABD5 /* ActionListRouter.swift */; };
+		74FB0D1B2A5F169E0022ABD5 /* ActionListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D142A5F169E0022ABD5 /* ActionListModels.swift */; };
+		74FB0D1C2A5F169E0022ABD5 /* ActionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D152A5F169E0022ABD5 /* ActionListViewController.swift */; };
+		74FB0D1D2A5F169E0022ABD5 /* ActionListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D162A5F169E0022ABD5 /* ActionListInteractor.swift */; };
+		74FB0D1E2A5F169E0022ABD5 /* ActionListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74FB0D172A5F169E0022ABD5 /* ActionListView.xib */; };
+		74FB0D212A5F26530022ABD5 /* ActionTimerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D1F2A5F26530022ABD5 /* ActionTimerCell.swift */; };
+		74FB0D222A5F26530022ABD5 /* ActionTimerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74FB0D202A5F26530022ABD5 /* ActionTimerCell.xib */; };
+		74FB0D2B2A607EEE0022ABD5 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D242A607EEE0022ABD5 /* MenuPresenter.swift */; };
+		74FB0D2C2A607EEE0022ABD5 /* MenuWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D252A607EEE0022ABD5 /* MenuWorker.swift */; };
+		74FB0D2D2A607EEE0022ABD5 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D262A607EEE0022ABD5 /* MenuRouter.swift */; };
+		74FB0D2E2A607EEE0022ABD5 /* MenuModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D272A607EEE0022ABD5 /* MenuModels.swift */; };
+		74FB0D2F2A607EEE0022ABD5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D282A607EEE0022ABD5 /* MenuViewController.swift */; };
+		74FB0D302A607EEE0022ABD5 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D292A607EEE0022ABD5 /* MenuInteractor.swift */; };
+		74FB0D312A607EEE0022ABD5 /* MenuView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74FB0D2A2A607EEE0022ABD5 /* MenuView.xib */; };
+		74FB0D342A607F240022ABD5 /* OptionMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D322A607F240022ABD5 /* OptionMenuCell.swift */; };
+		74FB0D352A607F240022ABD5 /* OptionMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74FB0D332A607F240022ABD5 /* OptionMenuCell.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		74C6B6872A591A4600045ED2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74C6B6682A591A4500045ED2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74C6B66F2A591A4500045ED2;
+			remoteInfo = DemoTimer;
+		};
+		74C6B6912A591A4600045ED2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74C6B6682A591A4500045ED2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74C6B66F2A591A4500045ED2;
+			remoteInfo = DemoTimer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		31DA1B79EA55CF45317F3418 /* Pods-DemoTimer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTimer.release.xcconfig"; path = "Target Support Files/Pods-DemoTimer/Pods-DemoTimer.release.xcconfig"; sourceTree = "<group>"; };
+		49B3B95F3EC9C16C01F823FE /* Pods_DemoTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		748088892A5D1058005E1C92 /* EnableModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableModeCell.swift; sourceTree = "<group>"; };
+		7480888A2A5D1058005E1C92 /* EnableModeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnableModeCell.xib; sourceTree = "<group>"; };
+		7490180D2A6761B400969572 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		749018102A67668D00969572 /* alert_high-intensity.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "alert_high-intensity.wav"; sourceTree = "<group>"; };
+		749018112A67668D00969572 /* ringtone_minimal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ringtone_minimal.wav; sourceTree = "<group>"; };
+		749018142A6766B400969572 /* alarm_gentle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = alarm_gentle.wav; sourceTree = "<group>"; };
+		74C6B6702A591A4500045ED2 /* DemoTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74C6B6732A591A4500045ED2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		74C6B67F2A591A4600045ED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		74C6B6812A591A4600045ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74C6B6862A591A4600045ED2 /* DemoTimerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTimerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		74C6B68A2A591A4600045ED2 /* DemoTimerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTimerTests.swift; sourceTree = "<group>"; };
+		74C6B6902A591A4600045ED2 /* DemoTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		74C6B6942A591A4600045ED2 /* DemoTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTimerUITests.swift; sourceTree = "<group>"; };
+		74C6B6962A591A4600045ED2 /* DemoTimerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTimerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		74C6B6A62A591B8F00045ED2 /* HomeTimerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimerPresenter.swift; sourceTree = "<group>"; };
+		74C6B6A82A591B8F00045ED2 /* HomeTimerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimerRouter.swift; sourceTree = "<group>"; };
+		74C6B6A92A591B8F00045ED2 /* HomeTimerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimerModels.swift; sourceTree = "<group>"; };
+		74C6B6AA2A591B8F00045ED2 /* HomeTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimerViewController.swift; sourceTree = "<group>"; };
+		74C6B6AB2A591B8F00045ED2 /* HomeTimerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimerInteractor.swift; sourceTree = "<group>"; };
+		74C6B6AC2A591B8F00045ED2 /* HomeTimerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTimerView.xib; sourceTree = "<group>"; };
+		74C6B6B52A5A203C00045ED2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		74C6B6B72A5AA21D00045ED2 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		74C6B6B92A5B82C900045ED2 /* ConfigureTimerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTimerPresenter.swift; sourceTree = "<group>"; };
+		74C6B6BA2A5B82C900045ED2 /* ConfigureTimerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTimerWorker.swift; sourceTree = "<group>"; };
+		74C6B6BB2A5B82C900045ED2 /* ConfigureTimerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTimerRouter.swift; sourceTree = "<group>"; };
+		74C6B6BC2A5B82C900045ED2 /* ConfigureTimerModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTimerModels.swift; sourceTree = "<group>"; };
+		74C6B6BD2A5B82C900045ED2 /* ConfigureTimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTimerViewController.swift; sourceTree = "<group>"; };
+		74C6B6BE2A5B82C900045ED2 /* ConfigureTimerInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureTimerInteractor.swift; sourceTree = "<group>"; };
+		74C6B6BF2A5B82C900045ED2 /* ConfigureTimerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfigureTimerView.xib; sourceTree = "<group>"; };
+		74C6B6CA2A5B8C6700045ED2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		74FB0CFD2A5DBA7E0022ABD5 /* SoundAndVibrationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SoundAndVibrationCell.xib; sourceTree = "<group>"; };
+		74FB0CFE2A5DBA7E0022ABD5 /* SoundAndVibrationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundAndVibrationCell.swift; sourceTree = "<group>"; };
+		74FB0D022A5E5C8A0022ABD5 /* CommetsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommetsPresenter.swift; sourceTree = "<group>"; };
+		74FB0D032A5E5C8A0022ABD5 /* CommentsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsWorker.swift; sourceTree = "<group>"; };
+		74FB0D042A5E5C8A0022ABD5 /* CommentsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsRouter.swift; sourceTree = "<group>"; };
+		74FB0D052A5E5C8A0022ABD5 /* CommentsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsModels.swift; sourceTree = "<group>"; };
+		74FB0D062A5E5C8A0022ABD5 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		74FB0D072A5E5C8A0022ABD5 /* CommentsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsInteractor.swift; sourceTree = "<group>"; };
+		74FB0D082A5E5C8A0022ABD5 /* CommentsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsView.xib; sourceTree = "<group>"; };
+		74FB0D112A5F169E0022ABD5 /* ActionListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionListPresenter.swift; sourceTree = "<group>"; };
+		74FB0D122A5F169E0022ABD5 /* ActionListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionListWorker.swift; sourceTree = "<group>"; };
+		74FB0D132A5F169E0022ABD5 /* ActionListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionListRouter.swift; sourceTree = "<group>"; };
+		74FB0D142A5F169E0022ABD5 /* ActionListModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionListModels.swift; sourceTree = "<group>"; };
+		74FB0D152A5F169E0022ABD5 /* ActionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionListViewController.swift; sourceTree = "<group>"; };
+		74FB0D162A5F169E0022ABD5 /* ActionListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionListInteractor.swift; sourceTree = "<group>"; };
+		74FB0D172A5F169E0022ABD5 /* ActionListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionListView.xib; sourceTree = "<group>"; };
+		74FB0D1F2A5F26530022ABD5 /* ActionTimerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionTimerCell.swift; sourceTree = "<group>"; };
+		74FB0D202A5F26530022ABD5 /* ActionTimerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActionTimerCell.xib; sourceTree = "<group>"; };
+		74FB0D242A607EEE0022ABD5 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
+		74FB0D252A607EEE0022ABD5 /* MenuWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuWorker.swift; sourceTree = "<group>"; };
+		74FB0D262A607EEE0022ABD5 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
+		74FB0D272A607EEE0022ABD5 /* MenuModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModels.swift; sourceTree = "<group>"; };
+		74FB0D282A607EEE0022ABD5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		74FB0D292A607EEE0022ABD5 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
+		74FB0D2A2A607EEE0022ABD5 /* MenuView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuView.xib; sourceTree = "<group>"; };
+		74FB0D322A607F240022ABD5 /* OptionMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionMenuCell.swift; sourceTree = "<group>"; };
+		74FB0D332A607F240022ABD5 /* OptionMenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionMenuCell.xib; sourceTree = "<group>"; };
+		FFD519BD4594B177BC2596BE /* Pods-DemoTimer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTimer.debug.xcconfig"; path = "Target Support Files/Pods-DemoTimer/Pods-DemoTimer.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		74C6B66D2A591A4500045ED2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56A6253C5D931D09398DBCFA /* Pods_DemoTimer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74C6B6832A591A4600045ED2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74C6B68D2A591A4600045ED2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2B9A9BBD8130204689C42EC1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FFD519BD4594B177BC2596BE /* Pods-DemoTimer.debug.xcconfig */,
+				31DA1B79EA55CF45317F3418 /* Pods-DemoTimer.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7490180C2A675D5900969572 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7490180F2A67663B00969572 /* Sounds */,
+				7490180D2A6761B400969572 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7490180F2A67663B00969572 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				749018142A6766B400969572 /* alarm_gentle.wav */,
+				749018102A67668D00969572 /* alert_high-intensity.wav */,
+				749018112A67668D00969572 /* ringtone_minimal.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		74C6B6672A591A4500045ED2 = {
+			isa = PBXGroup;
+			children = (
+				74C6B6722A591A4500045ED2 /* DemoTimer */,
+				74C6B6932A591A4600045ED2 /* DemoTimerUITests */,
+				74C6B6712A591A4500045ED2 /* Products */,
+				2B9A9BBD8130204689C42EC1 /* Pods */,
+				A37A6209AD7BCA24748FD156 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		74C6B6712A591A4500045ED2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74C6B6702A591A4500045ED2 /* DemoTimer.app */,
+				74C6B6862A591A4600045ED2 /* DemoTimerTests.xctest */,
+				74C6B6902A591A4600045ED2 /* DemoTimerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		74C6B6722A591A4500045ED2 /* DemoTimer */ = {
+			isa = PBXGroup;
+			children = (
+				7490180C2A675D5900969572 /* Resources */,
+				74C6B6C72A5B8B6700045ED2 /* Components */,
+				74C6B6B42A5A1FAB00045ED2 /* Utils */,
+				74C6B6A32A591A8D00045ED2 /* Modules */,
+				74C6B6732A591A4500045ED2 /* AppDelegate.swift */,
+				74C6B67E2A591A4600045ED2 /* LaunchScreen.storyboard */,
+				74C6B6812A591A4600045ED2 /* Info.plist */,
+				74C6B6892A591A4600045ED2 /* DemoTimerTests */,
+			);
+			path = DemoTimer;
+			sourceTree = "<group>";
+		};
+		74C6B6892A591A4600045ED2 /* DemoTimerTests */ = {
+			isa = PBXGroup;
+			children = (
+				74C6B68A2A591A4600045ED2 /* DemoTimerTests.swift */,
+			);
+			path = DemoTimerTests;
+			sourceTree = "<group>";
+		};
+		74C6B6932A591A4600045ED2 /* DemoTimerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				74C6B6942A591A4600045ED2 /* DemoTimerUITests.swift */,
+				74C6B6962A591A4600045ED2 /* DemoTimerUITestsLaunchTests.swift */,
+			);
+			path = DemoTimerUITests;
+			sourceTree = "<group>";
+		};
+		74C6B6A32A591A8D00045ED2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				74FB0D232A607EDC0022ABD5 /* Menu */,
+				74FB0D102A5F16880022ABD5 /* ActionList */,
+				74FB0D012A5E5C4F0022ABD5 /* Comments */,
+				74C6B6A52A591AD900045ED2 /* Configure */,
+				74C6B6A42A591A9B00045ED2 /* Home */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		74C6B6A42A591A9B00045ED2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				74C6B6A62A591B8F00045ED2 /* HomeTimerPresenter.swift */,
+				74C6B6A82A591B8F00045ED2 /* HomeTimerRouter.swift */,
+				74C6B6A92A591B8F00045ED2 /* HomeTimerModels.swift */,
+				74C6B6AA2A591B8F00045ED2 /* HomeTimerViewController.swift */,
+				74C6B6AB2A591B8F00045ED2 /* HomeTimerInteractor.swift */,
+				74C6B6AC2A591B8F00045ED2 /* HomeTimerView.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		74C6B6A52A591AD900045ED2 /* Configure */ = {
+			isa = PBXGroup;
+			children = (
+				74C6B6B92A5B82C900045ED2 /* ConfigureTimerPresenter.swift */,
+				74C6B6BA2A5B82C900045ED2 /* ConfigureTimerWorker.swift */,
+				74C6B6BB2A5B82C900045ED2 /* ConfigureTimerRouter.swift */,
+				74C6B6BC2A5B82C900045ED2 /* ConfigureTimerModels.swift */,
+				74C6B6BD2A5B82C900045ED2 /* ConfigureTimerViewController.swift */,
+				74C6B6BE2A5B82C900045ED2 /* ConfigureTimerInteractor.swift */,
+				74C6B6BF2A5B82C900045ED2 /* ConfigureTimerView.xib */,
+			);
+			path = Configure;
+			sourceTree = "<group>";
+		};
+		74C6B6B42A5A1FAB00045ED2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				74C6B6B52A5A203C00045ED2 /* Extensions.swift */,
+				74C6B6B72A5AA21D00045ED2 /* Style.swift */,
+				74C6B6CA2A5B8C6700045ED2 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		74C6B6C72A5B8B6700045ED2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				74FB0CFE2A5DBA7E0022ABD5 /* SoundAndVibrationCell.swift */,
+				74FB0CFD2A5DBA7E0022ABD5 /* SoundAndVibrationCell.xib */,
+				748088892A5D1058005E1C92 /* EnableModeCell.swift */,
+				7480888A2A5D1058005E1C92 /* EnableModeCell.xib */,
+				74FB0D1F2A5F26530022ABD5 /* ActionTimerCell.swift */,
+				74FB0D202A5F26530022ABD5 /* ActionTimerCell.xib */,
+				74FB0D322A607F240022ABD5 /* OptionMenuCell.swift */,
+				74FB0D332A607F240022ABD5 /* OptionMenuCell.xib */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		74FB0D012A5E5C4F0022ABD5 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				74FB0D022A5E5C8A0022ABD5 /* CommetsPresenter.swift */,
+				74FB0D032A5E5C8A0022ABD5 /* CommentsWorker.swift */,
+				74FB0D042A5E5C8A0022ABD5 /* CommentsRouter.swift */,
+				74FB0D052A5E5C8A0022ABD5 /* CommentsModels.swift */,
+				74FB0D062A5E5C8A0022ABD5 /* CommentsViewController.swift */,
+				74FB0D072A5E5C8A0022ABD5 /* CommentsInteractor.swift */,
+				74FB0D082A5E5C8A0022ABD5 /* CommentsView.xib */,
+			);
+			path = Comments;
+			sourceTree = "<group>";
+		};
+		74FB0D102A5F16880022ABD5 /* ActionList */ = {
+			isa = PBXGroup;
+			children = (
+				74FB0D112A5F169E0022ABD5 /* ActionListPresenter.swift */,
+				74FB0D122A5F169E0022ABD5 /* ActionListWorker.swift */,
+				74FB0D132A5F169E0022ABD5 /* ActionListRouter.swift */,
+				74FB0D142A5F169E0022ABD5 /* ActionListModels.swift */,
+				74FB0D152A5F169E0022ABD5 /* ActionListViewController.swift */,
+				74FB0D162A5F169E0022ABD5 /* ActionListInteractor.swift */,
+				74FB0D172A5F169E0022ABD5 /* ActionListView.xib */,
+			);
+			path = ActionList;
+			sourceTree = "<group>";
+		};
+		74FB0D232A607EDC0022ABD5 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				74FB0D242A607EEE0022ABD5 /* MenuPresenter.swift */,
+				74FB0D252A607EEE0022ABD5 /* MenuWorker.swift */,
+				74FB0D262A607EEE0022ABD5 /* MenuRouter.swift */,
+				74FB0D272A607EEE0022ABD5 /* MenuModels.swift */,
+				74FB0D282A607EEE0022ABD5 /* MenuViewController.swift */,
+				74FB0D292A607EEE0022ABD5 /* MenuInteractor.swift */,
+				74FB0D2A2A607EEE0022ABD5 /* MenuView.xib */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		A37A6209AD7BCA24748FD156 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49B3B95F3EC9C16C01F823FE /* Pods_DemoTimer.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		74C6B66F2A591A4500045ED2 /* DemoTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74C6B69A2A591A4600045ED2 /* Build configuration list for PBXNativeTarget "DemoTimer" */;
+			buildPhases = (
+				31111AFE1B42420C073A760A /* [CP] Check Pods Manifest.lock */,
+				74C6B66C2A591A4500045ED2 /* Sources */,
+				74C6B66D2A591A4500045ED2 /* Frameworks */,
+				7484E7652A5D19F300D7833D /* Resources */,
+				DED244383737A56E1C5F4E49 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DemoTimer;
+			productName = DemoTimer;
+			productReference = 74C6B6702A591A4500045ED2 /* DemoTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		74C6B6852A591A4600045ED2 /* DemoTimerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74C6B69D2A591A4600045ED2 /* Build configuration list for PBXNativeTarget "DemoTimerTests" */;
+			buildPhases = (
+				74C6B6822A591A4600045ED2 /* Sources */,
+				74C6B6832A591A4600045ED2 /* Frameworks */,
+				74C6B6842A591A4600045ED2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74C6B6882A591A4600045ED2 /* PBXTargetDependency */,
+			);
+			name = DemoTimerTests;
+			productName = DemoTimerTests;
+			productReference = 74C6B6862A591A4600045ED2 /* DemoTimerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		74C6B68F2A591A4600045ED2 /* DemoTimerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74C6B6A02A591A4600045ED2 /* Build configuration list for PBXNativeTarget "DemoTimerUITests" */;
+			buildPhases = (
+				74C6B68C2A591A4600045ED2 /* Sources */,
+				74C6B68D2A591A4600045ED2 /* Frameworks */,
+				74C6B68E2A591A4600045ED2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				74C6B6922A591A4600045ED2 /* PBXTargetDependency */,
+			);
+			name = DemoTimerUITests;
+			productName = DemoTimerUITests;
+			productReference = 74C6B6902A591A4600045ED2 /* DemoTimerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		74C6B6682A591A4500045ED2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					74C6B66F2A591A4500045ED2 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					74C6B6852A591A4600045ED2 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 74C6B66F2A591A4500045ED2;
+					};
+					74C6B68F2A591A4600045ED2 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 74C6B66F2A591A4500045ED2;
+					};
+				};
+			};
+			buildConfigurationList = 74C6B66B2A591A4500045ED2 /* Build configuration list for PBXProject "DemoTimer" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 74C6B6672A591A4500045ED2;
+			productRefGroup = 74C6B6712A591A4500045ED2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				74C6B66F2A591A4500045ED2 /* DemoTimer */,
+				74C6B6852A591A4600045ED2 /* DemoTimerTests */,
+				74C6B68F2A591A4600045ED2 /* DemoTimerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7484E7652A5D19F300D7833D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74FB0D1E2A5F169E0022ABD5 /* ActionListView.xib in Resources */,
+				74FB0D352A607F240022ABD5 /* OptionMenuCell.xib in Resources */,
+				7490180E2A6761B400969572 /* Assets.xcassets in Resources */,
+				749018152A6766B400969572 /* alarm_gentle.wav in Resources */,
+				74FB0CFF2A5DBA7E0022ABD5 /* SoundAndVibrationCell.xib in Resources */,
+				74FB0D222A5F26530022ABD5 /* ActionTimerCell.xib in Resources */,
+				7484E76B2A5D1A1800D7833D /* LaunchScreen.storyboard in Resources */,
+				7484E7672A5D1A0900D7833D /* EnableModeCell.xib in Resources */,
+				7484E7682A5D1A0900D7833D /* ConfigureTimerView.xib in Resources */,
+				74FB0D312A607EEE0022ABD5 /* MenuView.xib in Resources */,
+				749018132A67668D00969572 /* ringtone_minimal.wav in Resources */,
+				7484E7692A5D1A0900D7833D /* HomeTimerView.xib in Resources */,
+				74FB0D0F2A5E5C8A0022ABD5 /* CommentsView.xib in Resources */,
+				749018122A67668D00969572 /* alert_high-intensity.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74C6B6842A591A4600045ED2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74C6B68E2A591A4600045ED2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31111AFE1B42420C073A760A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DemoTimer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DED244383737A56E1C5F4E49 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoTimer/Pods-DemoTimer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DemoTimer/Pods-DemoTimer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DemoTimer/Pods-DemoTimer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		74C6B66C2A591A4500045ED2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74FB0D092A5E5C8A0022ABD5 /* CommetsPresenter.swift in Sources */,
+				74C6B6B22A591B8F00045ED2 /* HomeTimerInteractor.swift in Sources */,
+				74FB0D2C2A607EEE0022ABD5 /* MenuWorker.swift in Sources */,
+				74FB0D2D2A607EEE0022ABD5 /* MenuRouter.swift in Sources */,
+				74FB0D0B2A5E5C8A0022ABD5 /* CommentsRouter.swift in Sources */,
+				74FB0D2E2A607EEE0022ABD5 /* MenuModels.swift in Sources */,
+				74C6B6CB2A5B8C6700045ED2 /* Constants.swift in Sources */,
+				74FB0D1D2A5F169E0022ABD5 /* ActionListInteractor.swift in Sources */,
+				74C6B6C32A5B82C900045ED2 /* ConfigureTimerModels.swift in Sources */,
+				74FB0D0A2A5E5C8A0022ABD5 /* CommentsWorker.swift in Sources */,
+				74FB0D0C2A5E5C8A0022ABD5 /* CommentsModels.swift in Sources */,
+				74FB0D342A607F240022ABD5 /* OptionMenuCell.swift in Sources */,
+				7480888B2A5D1058005E1C92 /* EnableModeCell.swift in Sources */,
+				74FB0D302A607EEE0022ABD5 /* MenuInteractor.swift in Sources */,
+				74C6B6B02A591B8F00045ED2 /* HomeTimerModels.swift in Sources */,
+				74FB0D1C2A5F169E0022ABD5 /* ActionListViewController.swift in Sources */,
+				74FB0D212A5F26530022ABD5 /* ActionTimerCell.swift in Sources */,
+				74C6B6B62A5A203C00045ED2 /* Extensions.swift in Sources */,
+				74C6B6C12A5B82C900045ED2 /* ConfigureTimerWorker.swift in Sources */,
+				74FB0D192A5F169E0022ABD5 /* ActionListWorker.swift in Sources */,
+				74C6B6C52A5B82C900045ED2 /* ConfigureTimerInteractor.swift in Sources */,
+				74C6B6C22A5B82C900045ED2 /* ConfigureTimerRouter.swift in Sources */,
+				74FB0D0D2A5E5C8A0022ABD5 /* CommentsViewController.swift in Sources */,
+				74FB0D1B2A5F169E0022ABD5 /* ActionListModels.swift in Sources */,
+				74C6B6AD2A591B8F00045ED2 /* HomeTimerPresenter.swift in Sources */,
+				74C6B6742A591A4500045ED2 /* AppDelegate.swift in Sources */,
+				74C6B6B12A591B8F00045ED2 /* HomeTimerViewController.swift in Sources */,
+				74C6B6C02A5B82C900045ED2 /* ConfigureTimerPresenter.swift in Sources */,
+				74FB0D002A5DBA7E0022ABD5 /* SoundAndVibrationCell.swift in Sources */,
+				74C6B6C42A5B82C900045ED2 /* ConfigureTimerViewController.swift in Sources */,
+				74FB0D0E2A5E5C8A0022ABD5 /* CommentsInteractor.swift in Sources */,
+				74FB0D2B2A607EEE0022ABD5 /* MenuPresenter.swift in Sources */,
+				74FB0D2F2A607EEE0022ABD5 /* MenuViewController.swift in Sources */,
+				74C6B6B82A5AA21D00045ED2 /* Style.swift in Sources */,
+				74FB0D182A5F169E0022ABD5 /* ActionListPresenter.swift in Sources */,
+				74FB0D1A2A5F169E0022ABD5 /* ActionListRouter.swift in Sources */,
+				74C6B6AF2A591B8F00045ED2 /* HomeTimerRouter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74C6B6822A591A4600045ED2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74C6B68B2A591A4600045ED2 /* DemoTimerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		74C6B68C2A591A4600045ED2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74C6B6952A591A4600045ED2 /* DemoTimerUITests.swift in Sources */,
+				74C6B6972A591A4600045ED2 /* DemoTimerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74C6B6882A591A4600045ED2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74C6B66F2A591A4500045ED2 /* DemoTimer */;
+			targetProxy = 74C6B6872A591A4600045ED2 /* PBXContainerItemProxy */;
+		};
+		74C6B6922A591A4600045ED2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74C6B66F2A591A4500045ED2 /* DemoTimer */;
+			targetProxy = 74C6B6912A591A4600045ED2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		74C6B67E2A591A4600045ED2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				74C6B67F2A591A4600045ED2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		74C6B6982A591A4600045ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		74C6B6992A591A4600045ED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		74C6B69B2A591A4600045ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFD519BD4594B177BC2596BE /* Pods-DemoTimer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4U8FH8WH7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DemoTimer/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HectorClimaco.DemoTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		74C6B69C2A591A4600045ED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31DA1B79EA55CF45317F3418 /* Pods-DemoTimer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4U8FH8WH7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DemoTimer/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HectorClimaco.DemoTimer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		74C6B69E2A591A4600045ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4U8FH8WH7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HectorClimaco.DemoTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoTimer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemoTimer";
+			};
+			name = Debug;
+		};
+		74C6B69F2A591A4600045ED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4U8FH8WH7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HectorClimaco.DemoTimerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DemoTimer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DemoTimer";
+			};
+			name = Release;
+		};
+		74C6B6A12A591A4600045ED2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4U8FH8WH7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HectorClimaco.DemoTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DemoTimer;
+			};
+			name = Debug;
+		};
+		74C6B6A22A591A4600045ED2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D4U8FH8WH7;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.HectorClimaco.DemoTimerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DemoTimer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		74C6B66B2A591A4500045ED2 /* Build configuration list for PBXProject "DemoTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74C6B6982A591A4600045ED2 /* Debug */,
+				74C6B6992A591A4600045ED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74C6B69A2A591A4600045ED2 /* Build configuration list for PBXNativeTarget "DemoTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74C6B69B2A591A4600045ED2 /* Debug */,
+				74C6B69C2A591A4600045ED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74C6B69D2A591A4600045ED2 /* Build configuration list for PBXNativeTarget "DemoTimerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74C6B69E2A591A4600045ED2 /* Debug */,
+				74C6B69F2A591A4600045ED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		74C6B6A02A591A4600045ED2 /* Build configuration list for PBXNativeTarget "DemoTimerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74C6B6A12A591A4600045ED2 /* Debug */,
+				74C6B6A22A591A4600045ED2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 74C6B6682A591A4500045ED2 /* Project object */;
+}
