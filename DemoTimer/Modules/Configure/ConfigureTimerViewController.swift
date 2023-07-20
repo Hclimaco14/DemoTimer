@@ -35,6 +35,7 @@ class ConfigureTimerViewController: UIViewController {
     var enableModes:[ConfigureModel.EnableMode] = [] {
         didSet {
             DispatchQueue.main.async {
+                self.interactor?.saveConfiguration(modes: self.enableModes)
                 self.enableModesTableView.reloadData()
             }
         }
@@ -65,6 +66,9 @@ class ConfigureTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         interactor?.loadModes()
         interactor?.loadConfigurations()
     }
@@ -117,8 +121,12 @@ extension ConfigureTimerViewController: changeModeDelegate {
     func changeMode(mode: ConfigureModel.EnableMode) {
         if let firtIndex = enableModes.firstIndex(where: { $0.id == mode.id }), mode.id != 1{
             self.enableModes[firtIndex] = mode
-            if let indexAll = enableModes.firstIndex(where: {$0.id == 1}) {
+            if let indexAll = enableModes.firstIndex(where: { $0.id == 1 } ) {
                 self.enableModes[indexAll].isOn = false
+            }
+            let allModes = enableModes.filter({ $0.isOn  == true }).count == enableModes.count - 1
+            if allModes, let index = enableModes.firstIndex(where: { $0.id == 1 }) {
+                self.enableModes[index].isOn = true
             }
         } else {
             for index in 0..<enableModes.count {

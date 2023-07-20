@@ -11,7 +11,7 @@ import Foundation
 
 
 protocol ActionListBusinessLogic {
-    func doSomething(request: ActionList.Something.Request)
+    func updateSelection(configuration: ConfigureModel.Configuration)
 }
 
 class ActionListInteractor:  ActionListBusinessLogic {
@@ -20,9 +20,7 @@ class ActionListInteractor:  ActionListBusinessLogic {
     
     let worker = ActionListWorker()
     
-    func doSomething(request: ActionList.Something.Request) {
-        let response = ActionList.Something.Response()
-        presenter?.presentSomething(response: response)
+    func updateSelection(configuration: ConfigureModel.Configuration) {
+        worker.updateSelection(configuration: configuration)
     }
-    
 }

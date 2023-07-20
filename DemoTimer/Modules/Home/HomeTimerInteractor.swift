@@ -11,15 +11,16 @@ import Foundation
 
 
 protocol HomeTimerBusinessLogic {
-    func doSomething()
+    func loadInitialConfig()
 }
 
 class HomeTimerInteractor:  HomeTimerBusinessLogic {
     
     var presenter: HomeTimerPresentationLogic?
+    var worker = HomeTimerWorker()
     
-    func doSomething() {
-        presenter?.presentSomething()
+    func loadInitialConfig() {
+        worker.loadInitialConfig()
     }
     
 }

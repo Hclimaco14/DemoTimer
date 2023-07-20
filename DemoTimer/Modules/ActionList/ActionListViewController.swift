@@ -11,7 +11,7 @@ import CoreHaptics
 import AVFAudio
 
 protocol ActionListDisplayLogic {
-    func displaySomething(viewModel: ActionList.Something.ViewModel)
+    
 }
 
 class ActionListViewController: UIViewController {
@@ -112,7 +112,7 @@ class ActionListViewController: UIViewController {
 
 extension ActionListViewController:UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return configureActions.configurations.count
+        return configureActions.configureActions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -120,25 +120,26 @@ extension ActionListViewController:UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ActionTimerCell.identifier, for: indexPath) as? ActionTimerCell else {
             return UITableViewCell()
         }
-        cell.action = configureActions.configurations[indexPath.row]
+        cell.action = configureActions.configureActions[indexPath.row]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        for index in 0..<configureActions.configurations.count {
+        for index in 0..<configureActions.configureActions.count {
             if index == indexPath.row {
-                configureActions.configurations[index].isEnable = true
+                configureActions.configureActions[index].isEnable = true
             } else  {
-                configureActions.configurations[index].isEnable = false
+                configureActions.configureActions[index].isEnable = false
             }
         }
         
+        interactor?.updateSelection(configuration: configureActions)
         
-        if let vibrationAction = configureActions.configurations[indexPath.row] as? ConfigureModel.VibracionAction {
+        if let vibrationAction = configureActions.configureActions[indexPath.row] as? VibracionAction {
             feedback(vibrationAction.action)
-        } else if let soundAction = configureActions.configurations[indexPath.row] as? ConfigureModel.SoundAction {
+        } else if let soundAction = configureActions.configureActions[indexPath.row] as? SoundAction {
             feedback(soundAction.action)
         }
         
@@ -149,5 +150,5 @@ extension ActionListViewController:UITableViewDataSource, UITableViewDelegate {
 }
 
 extension ActionListViewController: ActionListDisplayLogic {
-    func displaySomething(viewModel: ActionList.Something.ViewModel) {}
+    
 }

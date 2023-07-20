@@ -13,6 +13,7 @@ import Foundation
 protocol ConfigureTimerBusinessLogic {
     func loadModes()
     func loadConfigurations()
+    func saveConfiguration(modes: [ConfigureModel.EnableMode])
 }
 
 class ConfigureTimerInteractor:  ConfigureTimerBusinessLogic {
@@ -29,4 +30,7 @@ class ConfigureTimerInteractor:  ConfigureTimerBusinessLogic {
         presenter?.presentConfigurations(configurations: worker.loadActions())
     }
     
+    func saveConfiguration(modes: [ConfigureModel.EnableMode]) {
+        worker.saveModes(mode: modes)
+    }
 }

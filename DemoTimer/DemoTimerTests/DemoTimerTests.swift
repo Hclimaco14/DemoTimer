@@ -9,28 +9,31 @@ import XCTest
 @testable import DemoTimer
 
 final class DemoTimerTests: XCTestCase {
-
+    
+    let configWorker = ConfigureTimerWorker()
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let _ = DefaultManager.shared.saveConfigurations(arrayList: configWorker.loadActions())
+        let _ = DefaultManager.shared.saveModes(arrayList: configWorker.loadModes())
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testModes() {
+        let modes = DefaultManager.shared.getModes()
+        
+        print(modes.map({ "\($0.id)) \($0.name): \($0.isOn)" }))
+        
+        XCTAssert(!modes.isEmpty)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testConfigurations() {
+        
+        let config = DefaultManager.shared.getConfigurations()
+        for conf in config {
+            let str = conf.configureActions.map{ $0.description }
+            print(str)
         }
+        
+        XCTAssert(!config.isEmpty)
     }
 
 }

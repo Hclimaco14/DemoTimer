@@ -56,6 +56,7 @@ class HomeTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        interactor?.loadInitialConfig()
     }
     
     // MARK: - Configurators

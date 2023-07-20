@@ -44,10 +44,14 @@ public enum Images {
 }
 
 
-public enum Vibration:Int,CaseIterable {
+public enum Vibration:Int,CaseIterable,Codable {
     case vabration1 = 1
     case vabration2 = 2
     case vabration3 = 3
+    
+    var name:String {
+        return "Vibracion \(self.rawValue)"
+    }
     
     public func vibrate(engine: CHHapticEngine?) {
         
@@ -114,10 +118,14 @@ public enum Vibration:Int,CaseIterable {
 }
 
 
-public enum Sound: Int,CaseIterable {
+public enum Sound: Int, CaseIterable, Codable {
     case sound1 = 1
     case sound2 = 2
     case sound3 = 3
+    
+    var name: String {
+        return "Sonido \(self.rawValue)"
+    }
     
     var value:String {
         switch self {

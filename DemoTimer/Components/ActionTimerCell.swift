@@ -16,7 +16,7 @@ class ActionTimerCell: UITableViewCell {
     @IBOutlet weak var actionNameLabel: UILabel!
     
 
-    var action:ConfigurationAction = ConfigureModel.SoundAction() {
+    var action:ConfigurationAction = ConfigurationAction() {
         didSet {
             configureCell()
         }
