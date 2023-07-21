@@ -167,6 +167,13 @@ class HomeTimerViewController: UIViewController {
         alertMenu.addAction(configurationAction)
         alertMenu.addAction(commetAction)
         
+        alertMenu.popoverPresentationController?.sourceView = self.view
+        let xOrigin = self.view.bounds.width / 2
+        let popoverRect = CGRect(x: xOrigin, y: 0, width: 1, height: 1)
+        alertMenu.popoverPresentationController?.sourceRect = popoverRect
+        alertMenu.popoverPresentationController?.permittedArrowDirections = .up
+
+        
         self.present(alertMenu, animated: true)
     }
     

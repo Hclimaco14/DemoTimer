@@ -16,12 +16,14 @@ class CommentViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var photoUserImageView: UIImageView!
+    @IBOutlet weak var phothoUserLabel: UILabel!
     
     @IBOutlet weak var nameUserTextField: UITextField!
     @IBOutlet weak var lastNameUserTextField: UITextField!
     
     @IBOutlet weak var commentView: UIView!
     @IBOutlet weak var commentTextView: UITextView!
+    
     
     // MARK: - Variables
     
@@ -89,7 +91,7 @@ class CommentViewController: UIViewController {
             self.view.backgroundColor = Coulors.background
             photoUserImageView.apply(styles: .cornerMid)
             photoUserImageView.isUserInteractionEnabled = true
-            
+            phothoUserLabel.textColor = Coulors.textButton
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapOnPhoto))
             photoUserImageView.addGestureRecognizer(tapGesture)
             

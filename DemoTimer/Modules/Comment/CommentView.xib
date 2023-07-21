@@ -15,6 +15,7 @@
                 <outlet property="commentView" destination="Qvt-qe-qvj" id="o1P-tr-IIC"/>
                 <outlet property="lastNameUserTextField" destination="3Lp-DZ-DfO" id="qzq-UJ-9b2"/>
                 <outlet property="nameUserTextField" destination="f0w-qt-ziW" id="YDD-ZZ-emI"/>
+                <outlet property="phothoUserLabel" destination="xct-IZ-u12" id="eQ1-yx-rjP"/>
                 <outlet property="photoUserImageView" destination="6rn-iH-9mE" id="W2u-Sx-Sey"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
