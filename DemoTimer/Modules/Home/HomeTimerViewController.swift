@@ -226,7 +226,7 @@ class HomeTimerViewController: UIViewController {
         } else if currentTime.isTimeOver {
             return
         }
-        if !isFaceUp {
+        if !isFaceUp && !UIDevice.isSimulator{
             showAlecrtFaceUp()
             return
         }

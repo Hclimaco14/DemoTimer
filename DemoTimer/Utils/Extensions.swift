@@ -77,3 +77,13 @@ func getCustomRightBarButtonSettings(_ button:UIButton, imgNormal:UIImage,needPa
     button.imageEdgeInsets.bottom = 10.0
     return UIBarButtonItem(customView: button)
 }
+
+extension UIDevice {
+    static var isSimulator: Bool = {
+        #if targetEnvironment(simulator)
+        return true
+        #else
+        return false
+        #endif
+    }()
+}
