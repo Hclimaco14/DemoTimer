@@ -10,8 +10,12 @@ import UIKit
 
 class CommentWorker {
     
-    func doSomeWork() {
-        
+    func saveComment(comment: CommentModel.Comment) {
+        DefaultManager.shared.saveComment(object: comment)
+    }
+    
+    func getComment() -> CommentModel.Comment? {
+        return DefaultManager.shared.getComment()
     }
     
 }

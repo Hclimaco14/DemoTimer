@@ -9,7 +9,7 @@
 import UIKit
 
 protocol CommentDisplayLogic {
-    
+    func displayComment(comment: CommentModel.Comment)
 }
 
 class CommentViewController: UIViewController {
@@ -29,6 +29,12 @@ class CommentViewController: UIViewController {
     var router: CommentRoutingLogic?
     var imagePicker: UIImagePickerController?
     
+    var comment = CommentModel.Comment() {
+        didSet {
+            loadComment()
+        }
+    }
+    
     // MARK: - Object Lifecycle
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -46,6 +52,19 @@ class CommentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        interactor?.getComment()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        let userImage = self.photoUserImageView.image ?? UIImage()
+        let name = self.nameUserTextField.text ?? ""
+        let lastName = self.lastNameUserTextField.text ?? ""
+        let commetUser = self.commentTextView.text ?? ""
+        
+        interactor?.saveData(comment: CommentModel.Comment(image: userImage, firstName: name, lastName: lastName, comment: commetUser))
     }
     
     // MARK: - Configurators
@@ -67,7 +86,6 @@ class CommentViewController: UIViewController {
     // MARK: - Private
     func configureView() {
         self.title = "Comentarios"
-//        DispatchQueue.main.async { [self] in
             self.view.backgroundColor = Coulors.background
             photoUserImageView.apply(styles: .cornerMid)
             photoUserImageView.isUserInteractionEnabled = true
@@ -79,7 +97,14 @@ class CommentViewController: UIViewController {
             commentView.backgroundColor = Coulors.textSelection
             commentTextView.textColor = Coulors.textButton
             commentTextView.backgroundColor = Coulors.textSelection
-//        }
+    }
+    
+    private func loadComment() {
+        self.photoUserImageView.image = comment.getImage()
+        self.photoUserImageView.contentMode = .scaleAspectFill
+        self.nameUserTextField.text = comment.firstName
+        self.lastNameUserTextField.text = comment.lastName
+        self.commentTextView.text = comment.comment
     }
     
     // MARK: - Actions
@@ -109,5 +134,9 @@ extension CommentViewController: UIImagePickerControllerDelegate, UINavigationCo
 }
 
 extension CommentViewController: CommentDisplayLogic {
+    func displayComment(comment: CommentModel.Comment) {
+        self.comment = comment
+    }
+    
     
 }

@@ -18,6 +18,7 @@ class DefaultManager {
         case userPreferences = "userPreferences"
         case configuration = "configurations"
         case modes = "modes"
+        case comment = "comment"
     }
     
     public static let shared = DefaultManager()
@@ -112,6 +113,30 @@ class DefaultManager {
             return []
         }
         return []
+    }
+    
+    
+    //Function to save comments in userdefault
+    func saveComment(object: CommentModel.Comment ) {
+        let encoder = JSONEncoder()
+        if let encoded = try? encoder.encode(object) {
+            guard Usdefaults != nil else { return }
+            Usdefaults?.set(encoded, forKey: keys.comment.rawValue)
+        }
+    }
+    
+    /// Function to get comment from userDefualts
+    /// - Returns: (optional) comment
+    func getComment() -> CommentModel.Comment? {
+        guard Usdefaults != nil else { return nil }
+        if let objectData = Usdefaults?.object(forKey: keys.comment.rawValue ) as? Data {
+            let decoder = JSONDecoder()
+            if let oject = try? decoder.decode( CommentModel.Comment.self, from: objectData) {
+                return oject
+            }
+            return nil
+        }
+        return nil
     }
 
 }

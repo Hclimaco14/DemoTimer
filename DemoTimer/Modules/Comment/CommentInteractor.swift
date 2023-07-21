@@ -11,7 +11,8 @@ import Foundation
 
 
 protocol CommentBusinessLogic {
-    
+    func saveData(comment: CommentModel.Comment)
+    func getComment()
 }
 
 class CommentInteractor:  CommentBusinessLogic {
@@ -20,6 +21,13 @@ class CommentInteractor:  CommentBusinessLogic {
     
     let worker = CommentWorker()
     
-
+    func saveData(comment: CommentModel.Comment) {
+        worker.saveComment(comment: comment)
+    }
     
+    func getComment() {
+        if let comment = worker.getComment() {
+            presenter?.presentComment(comment: comment)
+        }
+    }
 }

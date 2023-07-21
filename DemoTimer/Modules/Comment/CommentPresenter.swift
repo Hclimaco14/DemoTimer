@@ -9,12 +9,15 @@
 import UIKit
 
 protocol CommentPresentationLogic {
-    
+    func presentComment(comment: CommentModel.Comment)
 }
 
 class CommentPresenter: CommentPresentationLogic {
     
     var view: CommentDisplayLogic?
     
-
+    func presentComment(comment: CommentModel.Comment) {
+        view?.displayComment(comment: comment)
+    }
+    
 }
