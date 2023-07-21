@@ -10,6 +10,13 @@
 		56A6253C5D931D09398DBCFA /* Pods_DemoTimer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B3B95F3EC9C16C01F823FE /* Pods_DemoTimer.framework */; };
 		746A72AD2A6865D100C5912D /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A72AC2A6865D100C5912D /* UserDefaultManager.swift */; };
 		746A72AF2A69137D00C5912D /* HomeTimerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A72AE2A69137D00C5912D /* HomeTimerWorker.swift */; };
+		746A72B92A69B71300C5912D /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A72B22A69B71300C5912D /* CommentPresenter.swift */; };
+		746A72BA2A69B71300C5912D /* CommentWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A72B32A69B71300C5912D /* CommentWorker.swift */; };
+		746A72BB2A69B71300C5912D /* CommentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A72B42A69B71300C5912D /* CommentRouter.swift */; };
+		746A72BC2A69B71300C5912D /* CommentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A72B52A69B71300C5912D /* CommentModels.swift */; };
+		746A72BD2A69B71300C5912D /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A72B62A69B71300C5912D /* CommentViewController.swift */; };
+		746A72BE2A69B71300C5912D /* CommentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 746A72B72A69B71300C5912D /* CommentInteractor.swift */; };
+		746A72BF2A69B71300C5912D /* CommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 746A72B82A69B71300C5912D /* CommentView.xib */; };
 		7480888B2A5D1058005E1C92 /* EnableModeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748088892A5D1058005E1C92 /* EnableModeCell.swift */; };
 		7484E7672A5D1A0900D7833D /* EnableModeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7480888A2A5D1058005E1C92 /* EnableModeCell.xib */; };
 		7484E7682A5D1A0900D7833D /* ConfigureTimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74C6B6BF2A5B82C900045ED2 /* ConfigureTimerView.xib */; };
@@ -39,13 +46,6 @@
 		74C6B6CB2A5B8C6700045ED2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6B6CA2A5B8C6700045ED2 /* Constants.swift */; };
 		74FB0CFF2A5DBA7E0022ABD5 /* SoundAndVibrationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74FB0CFD2A5DBA7E0022ABD5 /* SoundAndVibrationCell.xib */; };
 		74FB0D002A5DBA7E0022ABD5 /* SoundAndVibrationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0CFE2A5DBA7E0022ABD5 /* SoundAndVibrationCell.swift */; };
-		74FB0D092A5E5C8A0022ABD5 /* CommetsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D022A5E5C8A0022ABD5 /* CommetsPresenter.swift */; };
-		74FB0D0A2A5E5C8A0022ABD5 /* CommentsWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D032A5E5C8A0022ABD5 /* CommentsWorker.swift */; };
-		74FB0D0B2A5E5C8A0022ABD5 /* CommentsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D042A5E5C8A0022ABD5 /* CommentsRouter.swift */; };
-		74FB0D0C2A5E5C8A0022ABD5 /* CommentsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D052A5E5C8A0022ABD5 /* CommentsModels.swift */; };
-		74FB0D0D2A5E5C8A0022ABD5 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D062A5E5C8A0022ABD5 /* CommentsViewController.swift */; };
-		74FB0D0E2A5E5C8A0022ABD5 /* CommentsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D072A5E5C8A0022ABD5 /* CommentsInteractor.swift */; };
-		74FB0D0F2A5E5C8A0022ABD5 /* CommentsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74FB0D082A5E5C8A0022ABD5 /* CommentsView.xib */; };
 		74FB0D182A5F169E0022ABD5 /* ActionListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D112A5F169E0022ABD5 /* ActionListPresenter.swift */; };
 		74FB0D192A5F169E0022ABD5 /* ActionListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D122A5F169E0022ABD5 /* ActionListWorker.swift */; };
 		74FB0D1A2A5F169E0022ABD5 /* ActionListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FB0D132A5F169E0022ABD5 /* ActionListRouter.swift */; };
@@ -88,6 +88,13 @@
 		49B3B95F3EC9C16C01F823FE /* Pods_DemoTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DemoTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		746A72AC2A6865D100C5912D /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		746A72AE2A69137D00C5912D /* HomeTimerWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTimerWorker.swift; sourceTree = "<group>"; };
+		746A72B22A69B71300C5912D /* CommentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPresenter.swift; sourceTree = "<group>"; };
+		746A72B32A69B71300C5912D /* CommentWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentWorker.swift; sourceTree = "<group>"; };
+		746A72B42A69B71300C5912D /* CommentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRouter.swift; sourceTree = "<group>"; };
+		746A72B52A69B71300C5912D /* CommentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModels.swift; sourceTree = "<group>"; };
+		746A72B62A69B71300C5912D /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		746A72B72A69B71300C5912D /* CommentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInteractor.swift; sourceTree = "<group>"; };
+		746A72B82A69B71300C5912D /* CommentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentView.xib; sourceTree = "<group>"; };
 		748088892A5D1058005E1C92 /* EnableModeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnableModeCell.swift; sourceTree = "<group>"; };
 		7480888A2A5D1058005E1C92 /* EnableModeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EnableModeCell.xib; sourceTree = "<group>"; };
 		7490180D2A6761B400969572 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,13 +128,6 @@
 		74C6B6CA2A5B8C6700045ED2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		74FB0CFD2A5DBA7E0022ABD5 /* SoundAndVibrationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SoundAndVibrationCell.xib; sourceTree = "<group>"; };
 		74FB0CFE2A5DBA7E0022ABD5 /* SoundAndVibrationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundAndVibrationCell.swift; sourceTree = "<group>"; };
-		74FB0D022A5E5C8A0022ABD5 /* CommetsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommetsPresenter.swift; sourceTree = "<group>"; };
-		74FB0D032A5E5C8A0022ABD5 /* CommentsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsWorker.swift; sourceTree = "<group>"; };
-		74FB0D042A5E5C8A0022ABD5 /* CommentsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsRouter.swift; sourceTree = "<group>"; };
-		74FB0D052A5E5C8A0022ABD5 /* CommentsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsModels.swift; sourceTree = "<group>"; };
-		74FB0D062A5E5C8A0022ABD5 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
-		74FB0D072A5E5C8A0022ABD5 /* CommentsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsInteractor.swift; sourceTree = "<group>"; };
-		74FB0D082A5E5C8A0022ABD5 /* CommentsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentsView.xib; sourceTree = "<group>"; };
 		74FB0D112A5F169E0022ABD5 /* ActionListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionListPresenter.swift; sourceTree = "<group>"; };
 		74FB0D122A5F169E0022ABD5 /* ActionListWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionListWorker.swift; sourceTree = "<group>"; };
 		74FB0D132A5F169E0022ABD5 /* ActionListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionListRouter.swift; sourceTree = "<group>"; };
@@ -182,6 +182,20 @@
 				31DA1B79EA55CF45317F3418 /* Pods-DemoTimer.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		746A72B02A69B6A200C5912D /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				746A72B22A69B71300C5912D /* CommentPresenter.swift */,
+				746A72B32A69B71300C5912D /* CommentWorker.swift */,
+				746A72B42A69B71300C5912D /* CommentRouter.swift */,
+				746A72B52A69B71300C5912D /* CommentModels.swift */,
+				746A72B62A69B71300C5912D /* CommentViewController.swift */,
+				746A72B72A69B71300C5912D /* CommentInteractor.swift */,
+				746A72B82A69B71300C5912D /* CommentView.xib */,
+			);
+			path = Comment;
 			sourceTree = "<group>";
 		};
 		7490180C2A675D5900969572 /* Resources */ = {
@@ -259,9 +273,9 @@
 		74C6B6A32A591A8D00045ED2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				746A72B02A69B6A200C5912D /* Comment */,
 				74FB0D232A607EDC0022ABD5 /* Menu */,
 				74FB0D102A5F16880022ABD5 /* ActionList */,
-				74FB0D012A5E5C4F0022ABD5 /* Comments */,
 				74C6B6A52A591AD900045ED2 /* Configure */,
 				74C6B6A42A591A9B00045ED2 /* Home */,
 			);
@@ -320,20 +334,6 @@
 				74FB0D332A607F240022ABD5 /* OptionMenuCell.xib */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		74FB0D012A5E5C4F0022ABD5 /* Comments */ = {
-			isa = PBXGroup;
-			children = (
-				74FB0D022A5E5C8A0022ABD5 /* CommetsPresenter.swift */,
-				74FB0D032A5E5C8A0022ABD5 /* CommentsWorker.swift */,
-				74FB0D042A5E5C8A0022ABD5 /* CommentsRouter.swift */,
-				74FB0D052A5E5C8A0022ABD5 /* CommentsModels.swift */,
-				74FB0D062A5E5C8A0022ABD5 /* CommentsViewController.swift */,
-				74FB0D072A5E5C8A0022ABD5 /* CommentsInteractor.swift */,
-				74FB0D082A5E5C8A0022ABD5 /* CommentsView.xib */,
-			);
-			path = Comments;
 			sourceTree = "<group>";
 		};
 		74FB0D102A5F16880022ABD5 /* ActionList */ = {
@@ -488,9 +488,9 @@
 				7484E7672A5D1A0900D7833D /* EnableModeCell.xib in Resources */,
 				7484E7682A5D1A0900D7833D /* ConfigureTimerView.xib in Resources */,
 				74FB0D312A607EEE0022ABD5 /* MenuView.xib in Resources */,
+				746A72BF2A69B71300C5912D /* CommentView.xib in Resources */,
 				749018132A67668D00969572 /* ringtone_minimal.wav in Resources */,
 				7484E7692A5D1A0900D7833D /* HomeTimerView.xib in Resources */,
-				74FB0D0F2A5E5C8A0022ABD5 /* CommentsView.xib in Resources */,
 				749018122A67668D00969572 /* alert_high-intensity.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -558,31 +558,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74FB0D092A5E5C8A0022ABD5 /* CommetsPresenter.swift in Sources */,
 				74C6B6B22A591B8F00045ED2 /* HomeTimerInteractor.swift in Sources */,
 				74FB0D2C2A607EEE0022ABD5 /* MenuWorker.swift in Sources */,
 				74FB0D2D2A607EEE0022ABD5 /* MenuRouter.swift in Sources */,
-				74FB0D0B2A5E5C8A0022ABD5 /* CommentsRouter.swift in Sources */,
 				74FB0D2E2A607EEE0022ABD5 /* MenuModels.swift in Sources */,
 				74C6B6CB2A5B8C6700045ED2 /* Constants.swift in Sources */,
 				74FB0D1D2A5F169E0022ABD5 /* ActionListInteractor.swift in Sources */,
 				74C6B6C32A5B82C900045ED2 /* ConfigureTimerModels.swift in Sources */,
-				74FB0D0A2A5E5C8A0022ABD5 /* CommentsWorker.swift in Sources */,
-				74FB0D0C2A5E5C8A0022ABD5 /* CommentsModels.swift in Sources */,
 				74FB0D342A607F240022ABD5 /* OptionMenuCell.swift in Sources */,
 				7480888B2A5D1058005E1C92 /* EnableModeCell.swift in Sources */,
 				74FB0D302A607EEE0022ABD5 /* MenuInteractor.swift in Sources */,
+				746A72BB2A69B71300C5912D /* CommentRouter.swift in Sources */,
 				746A72AD2A6865D100C5912D /* UserDefaultManager.swift in Sources */,
 				74C6B6B02A591B8F00045ED2 /* HomeTimerModels.swift in Sources */,
 				74FB0D1C2A5F169E0022ABD5 /* ActionListViewController.swift in Sources */,
 				74FB0D212A5F26530022ABD5 /* ActionTimerCell.swift in Sources */,
 				74C6B6B62A5A203C00045ED2 /* Extensions.swift in Sources */,
+				746A72BA2A69B71300C5912D /* CommentWorker.swift in Sources */,
 				74C6B6C12A5B82C900045ED2 /* ConfigureTimerWorker.swift in Sources */,
+				746A72BD2A69B71300C5912D /* CommentViewController.swift in Sources */,
+				746A72B92A69B71300C5912D /* CommentPresenter.swift in Sources */,
 				74FB0D192A5F169E0022ABD5 /* ActionListWorker.swift in Sources */,
 				74C6B6C52A5B82C900045ED2 /* ConfigureTimerInteractor.swift in Sources */,
 				74C6B6C22A5B82C900045ED2 /* ConfigureTimerRouter.swift in Sources */,
 				746A72AF2A69137D00C5912D /* HomeTimerWorker.swift in Sources */,
-				74FB0D0D2A5E5C8A0022ABD5 /* CommentsViewController.swift in Sources */,
 				74FB0D1B2A5F169E0022ABD5 /* ActionListModels.swift in Sources */,
 				74C6B6AD2A591B8F00045ED2 /* HomeTimerPresenter.swift in Sources */,
 				74C6B6742A591A4500045ED2 /* AppDelegate.swift in Sources */,
@@ -590,11 +589,12 @@
 				74C6B6C02A5B82C900045ED2 /* ConfigureTimerPresenter.swift in Sources */,
 				74FB0D002A5DBA7E0022ABD5 /* SoundAndVibrationCell.swift in Sources */,
 				74C6B6C42A5B82C900045ED2 /* ConfigureTimerViewController.swift in Sources */,
-				74FB0D0E2A5E5C8A0022ABD5 /* CommentsInteractor.swift in Sources */,
 				74FB0D2B2A607EEE0022ABD5 /* MenuPresenter.swift in Sources */,
 				74FB0D2F2A607EEE0022ABD5 /* MenuViewController.swift in Sources */,
 				74C6B6B82A5AA21D00045ED2 /* Style.swift in Sources */,
+				746A72BE2A69B71300C5912D /* CommentInteractor.swift in Sources */,
 				74FB0D182A5F169E0022ABD5 /* ActionListPresenter.swift in Sources */,
+				746A72BC2A69B71300C5912D /* CommentModels.swift in Sources */,
 				74FB0D1A2A5F169E0022ABD5 /* ActionListRouter.swift in Sources */,
 				74C6B6AF2A591B8F00045ED2 /* HomeTimerRouter.swift in Sources */,
 			);

@@ -25,12 +25,15 @@ enum ConfigureModel {
     }
     
     public enum Mode:Int, Codable {
+        case undefined = 0
         case soundAndVibration = 1
         case onlySound = 2
         case onlyVibration = 3
         
         var name: String {
             switch self {
+            case .undefined:
+                return "Sin Seleccionar"
             case .soundAndVibration:
                 return "Sonido y Vibracion"
             case .onlySound:
@@ -54,7 +57,7 @@ enum ConfigureModel {
         
         init() {
             self.isOn = false
-            self.mode = .soundAndVibration
+            self.mode = .undefined
         }
         
         init(mode: Mode,isOn: Bool) {
@@ -89,11 +92,18 @@ enum ConfigureModel {
     }
     
 
-    public struct UserPreference:Codable {
+    public struct UserPreference: Codable {
         var mode: EnableMode
         var sound: SoundAction
         var vibration: VibracionAction
         var comment: String
+        
+        init() {
+            mode = EnableMode()
+            sound = SoundAction()
+            vibration = VibracionAction()
+            comment = ""
+        }
         
         init(mode: ConfigureModel.EnableMode, sound: SoundAction, vibration: VibracionAction,  comment: String) {
             self.mode = mode
@@ -104,8 +114,6 @@ enum ConfigureModel {
     }
     
 }
-
-
 
 
 class ConfigurationAction: Codable {
@@ -177,6 +185,21 @@ class VibracionAction: ConfigurationAction {
         case action
     }
     
+    convenience init?(action: ConfigurationAction) {
+        guard let vibration = Vibration(rawValue: action.id) else {
+            return nil
+        }
+        self.init(action: vibration, isEnable: action.isEnable)
+    }
+    
+    
+    convenience init?(id: Int, isEnable: Bool) {
+        guard let vibration = Vibration(rawValue: id) else {
+            return nil
+        }
+        self.init(action: vibration, isEnable: isEnable)
+    }
+    
     override init() {
         self.action = .vabration1
         super.init()
@@ -209,6 +232,7 @@ class VibracionAction: ConfigurationAction {
     }
 }
 
+
 class SoundAction: ConfigurationAction {
     var action: Sound
     
@@ -222,6 +246,21 @@ class SoundAction: ConfigurationAction {
     override init() {
         self.action = .sound1
         super.init()
+    }
+    
+    
+    convenience init?(action: ConfigurationAction) {
+        guard let sound = Sound(rawValue: action.id) else {
+            return nil
+        }
+        self.init(action: sound, isEnable: action.isEnable)
+    }
+    
+    convenience init?(id: Int, isEnable: Bool) {
+        guard let sound = Sound(rawValue: id) else {
+            return nil
+        }
+        self.init(action: sound, isEnable: isEnable)
     }
     
     init(action: Sound, isEnable: Bool) {

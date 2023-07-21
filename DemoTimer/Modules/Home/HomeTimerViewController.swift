@@ -8,9 +8,11 @@
 
 import SideMenu
 import UIKit
+import CoreHaptics
+import AVFAudio
 
 protocol HomeTimerDisplayLogic {
-    func displaySomething()
+    func displayUserPreference(preference: ConfigureModel.UserPreference)
 }
 
 class HomeTimerViewController: UIViewController {
@@ -30,6 +32,11 @@ class HomeTimerViewController: UIViewController {
     var currentTime = HomeTimer.Time()
     var pickerTime = HomeTimer.Time()
     var timer: Timer?
+    var userPreference = ConfigureModel.UserPreference()
+    
+    var engine: CHHapticEngine?
+    var soundEffect: AVAudioPlayer?
+    
     var isTimerActive: Bool = false {
         didSet {
             let textButton = isTimerActive ? "Pausa" : "Reanudar"
@@ -56,7 +63,12 @@ class HomeTimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        configureHaptics()
         interactor?.loadInitialConfig()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        interactor?.getUserPreference()
     }
     
     // MARK: - Configurators
@@ -76,6 +88,7 @@ class HomeTimerViewController: UIViewController {
     }
     
     fileprivate func configureView(){
+        self.title = "Timer"
         self.view.backgroundColor = Coulors.background
         self.pickerHour.dataSource = self
         self.pickerHour.delegate = self
@@ -92,6 +105,16 @@ class HomeTimerViewController: UIViewController {
     
     // MARK: - Private
     
+    private func configureHaptics() {
+        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+
+        do {
+            engine = try CHHapticEngine()
+            try engine?.start()
+        } catch {
+            print("There was an error creating the engine: \(error.localizedDescription)")
+        }
+    }
     
     func timeMinusSecond(time: HomeTimer.Time) ->  HomeTimer.Time {
 
@@ -122,18 +145,17 @@ class HomeTimerViewController: UIViewController {
         isTimerActive = false
         currentTime = pickerTime
         labelHour.attributedText = currentTime.toAttributedString()
+        acceptOrPauseButton.setTitle("Aceptar", for: .normal)
         timer?.invalidate()
     }
     
-    private func makeActionMenu(){
-        let alertMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    private func actionConfiguration(){
+        let alertMenu = UIAlertController(title: "Configuracion", message: "Configure sus preferencias de Vibracion y Sonido para continuar", preferredStyle: .actionSheet)
         let configurationAction = UIAlertAction(title: "Configuraciones", style: .default) {_ in
             self.router?.goToConfiguration()
         }
         
-        let commetAction = UIAlertAction(title: "Comentarios", style: .default) { _ in
-            self.router?.goToComments()
-        }
+        let commetAction = UIAlertAction(title: "Cancel", style: .default)
         
         alertMenu.addAction(configurationAction)
         alertMenu.addAction(commetAction)
@@ -141,9 +163,42 @@ class HomeTimerViewController: UIViewController {
         self.present(alertMenu, animated: true)
     }
     
+    private func feedback(_ vibration: Vibration) {
+        vibration.vibrate(engine: self.engine)
+    }
+    
+    private func feedback(_ sound: Sound) {
+        sound.soundPlay(soundEffect: &self.soundEffect)
+    }
+    
+    private func timeOver() {
+        switch userPreference.mode.mode {
+    
+        case .soundAndVibration:
+            feedback(userPreference.sound.action)
+            feedback(userPreference.vibration.action)
+        case .onlySound:
+            feedback(userPreference.sound.action)
+        case .onlyVibration:
+            feedback(userPreference.vibration.action)
+        default:
+            break
+        
+        }
+        timer?.invalidate()
+        resetTimer()
+    }
+    
     // MARK: - Actions
     
     @IBAction func acceptPauseAction(_ sender: Any) {
+        if userPreference.mode.mode == .undefined {
+            actionConfiguration()
+            return
+        } else if currentTime.isTimeOver {
+            return
+        }
+        
         pickerHour.isHidden = true
         labelHour.isHidden = false
         if isTimerActive {
@@ -156,12 +211,13 @@ class HomeTimerViewController: UIViewController {
     
     @IBAction func cancelAction(_ sender: Any) {
        resetTimer()
+        self.engine?.stop()
+        self.soundEffect?.stop()
     }
     
     @objc func timerAction() {
         if currentTime.isTimeOver {
-            timer?.invalidate()
-            resetTimer()
+            timeOver()
         }
         self.currentTime = timeMinusSecond(time: currentTime)
         
@@ -224,5 +280,7 @@ extension HomeTimerViewController: UIPickerViewDataSource, UIPickerViewDelegate 
 }
 
 extension HomeTimerViewController: HomeTimerDisplayLogic {
-    func displaySomething() {}
+    func displayUserPreference(preference: ConfigureModel.UserPreference) {
+        self.userPreference = preference
+    }
 }

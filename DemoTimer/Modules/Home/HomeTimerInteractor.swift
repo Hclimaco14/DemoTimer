@@ -12,6 +12,7 @@ import Foundation
 
 protocol HomeTimerBusinessLogic {
     func loadInitialConfig()
+    func getUserPreference()
 }
 
 class HomeTimerInteractor:  HomeTimerBusinessLogic {
@@ -21,6 +22,12 @@ class HomeTimerInteractor:  HomeTimerBusinessLogic {
     
     func loadInitialConfig() {
         worker.loadInitialConfig()
+    }
+    
+    func getUserPreference() {
+        if let user = worker.getPreference() {
+            presenter?.presentUserPreference(preference: user)
+        }
     }
     
 }

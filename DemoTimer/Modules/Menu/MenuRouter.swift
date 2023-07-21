@@ -21,7 +21,9 @@ class MenuRouter: MenuRoutingLogic {
     func goToConfiguration() {
         view?.navigationController?.pushViewController(ConfigureTimerViewController(), animated: true)
     }
+    
     func goToComments() {
-        view?.navigationController?.pushViewController(CommentsViewController(), animated: true)
+        let vc = CommentViewController()
+        view?.navigationController?.pushViewController(vc, animated: true)
     }
 }

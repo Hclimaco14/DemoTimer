@@ -91,8 +91,8 @@ class ConfigureTimerViewController: UIViewController {
     
     
     func configureView() {
+        self.title = "Configurciones"
         self.view.backgroundColor = Coulors.background
-        
         self.enableModesTableView.register(UINib(nibName: EnableModeCell.identifier, bundle: nil), forCellReuseIdentifier: EnableModeCell.identifier)
         self.enableModesTableView.isScrollEnabled = false
         self.enableModesTableView.backgroundColor = Coulors.background
@@ -156,7 +156,7 @@ extension ConfigureTimerViewController: UITableViewDataSource, UITableViewDelega
             return cell
             
         } else if tableView == self.enableModesTableView, let cellMode = tableView.dequeueReusableCell(withIdentifier: EnableModeCell.identifier, for: indexPath) as? EnableModeCell {
-            cellMode.enableMode = enableModes[indexPath.row]
+            cellMode.enableModePhone = enableModes[indexPath.row]
             cellMode.delegate = self
             return cellMode
         } else {

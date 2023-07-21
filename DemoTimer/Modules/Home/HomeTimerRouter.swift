@@ -11,7 +11,6 @@ import UIKit
 
 protocol HomeTimerRoutingLogic {
     func goToConfiguration()
-    func goToComments()
 }
 
 class HomeTimerRouter: HomeTimerRoutingLogic {
@@ -19,11 +18,6 @@ class HomeTimerRouter: HomeTimerRoutingLogic {
     var view: HomeTimerViewController?
     
     func goToConfiguration() {
-        
+        view?.navigationController?.pushViewController(ConfigureTimerViewController(), animated: true)
     }
-    
-    func goToComments() {
-        
-    }
-    
 }

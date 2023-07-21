@@ -99,7 +99,6 @@ class ActionListViewController: UIViewController {
     
     
     // MARK: - Actions
-    
     func feedback(_ vibration: Vibration) {
         vibration.vibrate(engine: self.engine)
     }
@@ -137,9 +136,11 @@ extension ActionListViewController:UITableViewDataSource, UITableViewDelegate {
         
         interactor?.updateSelection(configuration: configureActions)
         
-        if let vibrationAction = configureActions.configureActions[indexPath.row] as? VibracionAction {
+        let action = configureActions.configureActions[indexPath.row]
+        
+        if configureActions.type == .vibration, let vibrationAction = VibracionAction(action: action)  {
             feedback(vibrationAction.action)
-        } else if let soundAction = configureActions.configureActions[indexPath.row] as? SoundAction {
+        } else if configureActions.type == .sound, let soundAction = SoundAction(action: action){
             feedback(soundAction.action)
         }
         

@@ -22,6 +22,10 @@ class HomeTimerWorker {
         }
     }
     
+    func getPreference() -> ConfigureModel.UserPreference? {
+        return DefaultManager.shared.getUserPreference()
+    }
+    
     private func loadModes() -> [ConfigureModel.EnableMode] {
         let soundAndVibration = ConfigureModel.EnableMode(mode: .soundAndVibration, isOn: false)
         let onlySound = ConfigureModel.EnableMode(mode: .onlySound, isOn: false)

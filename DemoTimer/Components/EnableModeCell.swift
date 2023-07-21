@@ -16,7 +16,7 @@ class EnableModeCell: UITableViewCell {
     @IBOutlet weak var enableModeSwitch: UISwitch!
     
     //variables
-    var enableMode = ConfigureModel.EnableMode() {
+    var enableModePhone = ConfigureModel.EnableMode() {
         didSet{
             configureCell()
         }
@@ -36,9 +36,9 @@ class EnableModeCell: UITableViewCell {
     
     func configureCell() {
         self.backgroundColor = Coulors.backgroundCell
-        self.titleModeLabel.text = enableMode.name
+        self.titleModeLabel.text = enableModePhone.name
         self.titleModeLabel.textColor = Coulors.textButton
-        self.enableModeSwitch.isOn = enableMode.isOn
+        self.enableModeSwitch.isOn = enableModePhone.isOn
     }
     
     @IBAction func valueChange(_ sender: Any) {
@@ -46,8 +46,8 @@ class EnableModeCell: UITableViewCell {
              return
         }
         
-        enableMode.isOn = value.isOn
-        delegate?.changeMode(mode: enableMode)
+        enableModePhone.isOn = value.isOn
+        delegate?.changeMode(mode: enableModePhone)
     }
     
     

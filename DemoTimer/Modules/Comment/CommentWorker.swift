@@ -1,14 +1,14 @@
 //
-//  CommentsWorker.swift
+//  CommentWorker.swift
 //  DemoTimer
 //
-//  Created by Hector Climaco on 11/07/23.
+//  Created by Hector Climaco on 20/07/23.
 //  
 //
 
 import UIKit
 
-class CommentsWorker {
+class CommentWorker {
     
     func doSomeWork() {
         

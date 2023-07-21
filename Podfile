@@ -2,8 +2,8 @@
 # platform :ios, '9.0'
 
 target 'DemoTimer' do
-  use_frameworks!
-
+use_frameworks!
 pod 'SideMenu'
+pod 'IQKeyboardManagerSwift'
 
 end

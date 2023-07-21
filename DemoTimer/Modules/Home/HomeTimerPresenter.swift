@@ -9,14 +9,14 @@
 import UIKit
 
 protocol HomeTimerPresentationLogic {
-    func presentSomething()
+    func presentUserPreference(preference: ConfigureModel.UserPreference)
 }
 
 class HomeTimerPresenter: HomeTimerPresentationLogic {
     
     var view: HomeTimerDisplayLogic?
     
-    func presentSomething() {
-        view?.displaySomething()
+    func presentUserPreference(preference: ConfigureModel.UserPreference) {
+        view?.displayUserPreference(preference: preference)
     }
 }
