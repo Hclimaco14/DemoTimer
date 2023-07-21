@@ -43,6 +43,10 @@ class HomeTimerViewController: UIViewController {
             self.acceptOrPauseButton.setTitle(textButton, for: .normal)
         }
     }
+    var isFaceUp:Bool {
+        return UIDevice.current.orientation == .faceUp
+    }
+    
     var menu:SideMenuNavigationController?
     
     let menuButton: UIButton = UIButton(type: UIButton.ButtonType.custom)
@@ -106,6 +110,8 @@ class HomeTimerViewController: UIViewController {
     // MARK: - Private
     
     private func configureHaptics() {
+        self.soundEffect?.stop()
+        
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
 
         do {
@@ -115,8 +121,8 @@ class HomeTimerViewController: UIViewController {
             print("There was an error creating the engine: \(error.localizedDescription)")
         }
     }
-    
-    func timeMinusSecond(time: HomeTimer.Time) ->  HomeTimer.Time {
+
+    private func timeMinusSecond(time: HomeTimer.Time) ->  HomeTimer.Time {
 
         var timeMinus = time
         
@@ -147,15 +153,16 @@ class HomeTimerViewController: UIViewController {
         labelHour.attributedText = currentTime.toAttributedString()
         acceptOrPauseButton.setTitle("Aceptar", for: .normal)
         timer?.invalidate()
+        configureHaptics()
     }
     
-    private func actionConfiguration(){
+    private func actionConfiguration() {
         let alertMenu = UIAlertController(title: "Configuracion", message: "Configure sus preferencias de Vibracion y Sonido para continuar", preferredStyle: .actionSheet)
         let configurationAction = UIAlertAction(title: "Configuraciones", style: .default) {_ in
             self.router?.goToConfiguration()
         }
         
-        let commetAction = UIAlertAction(title: "Cancel", style: .default)
+        let commetAction = UIAlertAction(title: "Cancel", style: .cancel)
         
         alertMenu.addAction(configurationAction)
         alertMenu.addAction(commetAction)
@@ -163,12 +170,26 @@ class HomeTimerViewController: UIViewController {
         self.present(alertMenu, animated: true)
     }
     
+    private func showAlecrtFaceUp() {
+        let alertFaceUp = UIAlertController(title: "Configuracion", message: "El telefono tiene que estar sobre una superficie plana para iniciar", preferredStyle: .alert)
+        let aceptAction = UIAlertAction(title: "Aceptar", style: .default)
+        
+        alertFaceUp.addAction(aceptAction)
+        
+        self.present(alertFaceUp, animated: true)
+    }
+    
     private func feedback(_ vibration: Vibration) {
-        vibration.vibrate(engine: self.engine)
+        DispatchQueue.main.async {
+            vibration.vibrate(engine: self.engine)
+        }
     }
     
     private func feedback(_ sound: Sound) {
-        sound.soundPlay(soundEffect: &self.soundEffect)
+        DispatchQueue.main.async {
+            sound.soundPlay(soundEffect: &self.soundEffect)
+        }
+        
     }
     
     private func timeOver() {
@@ -196,6 +217,10 @@ class HomeTimerViewController: UIViewController {
             actionConfiguration()
             return
         } else if currentTime.isTimeOver {
+            return
+        }
+        if !isFaceUp {
+            showAlecrtFaceUp()
             return
         }
         
