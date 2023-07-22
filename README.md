@@ -5,7 +5,8 @@
 Meking a timer using swift lenguage
 
 
- Application created with clean architecture,to make a timer,list and save configurations and comments, published in test flight 
+<p>Application created with clean architecture,to make a timer,list and save configurations and comments, published in test flight </p>
+<p>TestFlight URL: https://testflight.apple.com/join/mglnixOj</p>
 
 ### The use of:
 
